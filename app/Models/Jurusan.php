@@ -12,4 +12,8 @@ class Jurusan extends Model
     protected $table = "jurusan";
 
     protected $fillable = ["nama_jurusan"];
+
+    public function siswa() {
+        return $this->hasMany(Siswa::class);
+    }
 }

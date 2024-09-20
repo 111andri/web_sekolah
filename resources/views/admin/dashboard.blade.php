@@ -13,7 +13,7 @@
         <div class="card text-bg-success mb-3">
           <div class="card-body">
             <h5 class="card-title">Total Siswa</h5>
-            <p class="card-text">500 Siswa</p>
+            <p class="card-text">{{ $dataSiswa}}</p>
           </div>
         </div>
       </div>

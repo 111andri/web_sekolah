@@ -25,4 +25,20 @@ class Siswa extends Model
         "foto_siswa",
     ];
 
+    public function angkatan() {
+        return $this->belongsTo(Angkatan::class);
+    }
+
+    public function jurusan() {
+        return $this->belongsTo(Jurusan::class);
+    }
+
+    public function jenisKelamin() {
+        return $this->belongsTo(JenisKelamin::class);
+    }
+    
+    public function tahunLulu() {
+        return $this->belongsTo(TahunLulus::class);
+    }
+
 }
