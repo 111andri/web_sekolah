@@ -21,9 +21,11 @@ Route::get('admin/jurusan', [JurusanController::class, 'index'])->name('admin.ju
 
 // routing create tampil
 Route::get('admin/tambah/tambah-jurusan', [JurusanController::class, 'create'])->name('admin/tambah/tambah-jurusan');
+Route::get('admin/tambah/tambah-siswa', [SiswaController::class, 'create'])->name('admin/tambah/tambah-siswa');
 
 // routing create store post
 Route::post('admin/tambah/store', [JurusanController::class, 'store'])->name('admin/tambah/store');
+Route::post('admin/tambah/store-siswa', [SiswaController::class, 'store'])->name('admin/tambah/store-siswa');
 
 // routing destroy
 Route::get('admin/jurusan{id}', [JurusanController::class, 'destroy'])->name('admin/jurusan{id}');

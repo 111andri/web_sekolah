@@ -24,7 +24,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah.tambah-siswa');
     }
 
     /**
@@ -32,7 +32,7 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

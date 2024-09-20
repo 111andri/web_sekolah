@@ -40,5 +40,8 @@ class Siswa extends Model
     public function tahunLulu() {
         return $this->belongsTo(TahunLulus::class);
     }
+    public function agama() {
+        return $this->belongsTo(Agama::class);
+    }
 
 }
