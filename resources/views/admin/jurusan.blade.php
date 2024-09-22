@@ -1,7 +1,7 @@
 
 <x-layout>
     <h2 class="mb-4">Tabel Data Jurusan</h2><hr>
-    <div class="container mt-5">
+    <div class="container mt-5 p-4 rounded-3" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
 
         @if (session('success'))
             
@@ -24,7 +24,7 @@
                 <td> {{ $index + 1 }} </td>
                 <td> {{ $data->nama_jurusan }} </td>
                 <td>
-                  <a href=""><button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i>Edit</button></a>
+                  <a href="{{ url('admin/edit/edit-jurusan/'.$data->id) }}"><button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i>Edit</button></a>
                   <a href="{{ url('admin/jurusan'.$data->id) }}"><button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button></a>
                 </td>
               </tr>

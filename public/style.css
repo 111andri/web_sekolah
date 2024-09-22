@@ -1,80 +1,80 @@
 body {
-    font-family: 'Arial', sans-serif;
-  }
-  .sidebar {
+    font-family: "Arial", sans-serif;
+}
+.sidebar {
     height: 100vh;
     background-color: #212529;
     color: #fff;
     position: fixed;
-    width: 250px;
+    width: 13%;
     padding-top: 20px;
-  }
-  .sidebar a {
+}
+.sidebar a {
     color: #adb5bd;
     text-decoration: none;
     padding: 10px;
     display: block;
-  }
-  .sidebar a:hover {
+}
+.sidebar a:hover {
     background-color: #343a40;
     color: #fff;
-  }
-  .sidebar a.active {
+}
+.sidebar a.active {
     background-color: #0d6efd;
     color: #fff;
-  }
-  .content {
+}
+.content {
     margin-left: 250px;
     padding: 20px;
-  }
-  .content h1 {
+}
+.content h1 {
     margin-bottom: 20px;
-  }
-  .card {
+}
+.card {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  }
+}
 
-  /* table */
-  .table-wrapper {
+/* table */
+.table-wrapper {
     margin-top: 30px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  .table-wrapper .table {
+}
+.table-wrapper .table {
     margin-top: 20px;
-  }
-  .table thead th {
+}
+.table thead th {
     background-color: #0d6efd;
     color: white;
     text-align: center;
-  }
-  .table-striped tbody tr:nth-of-type(odd) {
+}
+.table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(13, 110, 253, 0.05);
-  }
-  .table-hover tbody tr:hover {
+}
+.table-hover tbody tr:hover {
     background-color: rgba(13, 110, 253, 0.15);
     transition: background-color 0.3s ease;
-  }
-  .badge-status {
+}
+.badge-status {
     font-size: 0.85rem;
     padding: 0.5em;
-  }
-  .btn {
+}
+.btn {
     margin-right: 5px;
-  }
-  .search-bar {
+}
+.search-bar {
     margin-bottom: 20px;
-  }
-  .pagination {
+}
+.pagination {
     justify-content: center;
-  }
-  .search-bar input {
+}
+.search-bar input {
     border-radius: 25px;
     padding: 0.5rem 1rem;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
     display: block;
-  }
+}

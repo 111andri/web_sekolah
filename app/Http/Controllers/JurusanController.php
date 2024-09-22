@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class JurusanController extends Controller
@@ -53,9 +54,11 @@ class JurusanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(String $id) 
     {
-        //
+        $jurusan = Jurusan::findOrFail($id);
+
+        return view('admin/edit/edit-jurusan', compact('jurusan'));
     }
 
     /**
@@ -63,7 +66,14 @@ class JurusanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+    //    dd('updated');
+
+        $jurusan = Jurusan::findOrFail($id);
+
+        $jurusan->update($request->all());
+
+
+        return redirect('admin/jurusan')->with('success', 'Data jurusan berhasil di edit');
     }
 
     /**

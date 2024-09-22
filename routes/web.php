@@ -29,3 +29,12 @@ Route::post('admin/tambah/store-siswa', [SiswaController::class, 'store'])->name
 
 // routing destroy
 Route::get('admin/jurusan{id}', [JurusanController::class, 'destroy'])->name('admin/jurusan{id}');
+Route::delete('admin/siswa{id}', [SiswaController::class, 'destroy'])->name('admin/siswa{id}');
+
+// routing edit tampil
+Route::get('admin/edit/edit-siswa{id}', [SiswaController::class, 'edit'])->name('admin/edit/edit-siswa{id}');
+Route::get('admin/edit/edit-jurusan/{id}', [JurusanController::class, 'edit'])->name('admin/edit/edit-jurusan/{id}');
+
+// routing edit update
+Route::put('admin/edit/update-jurusan/{id}', [JurusanController::class, 'update'])->name('admin/edit/update-jurusan/{id}');
+Route::put('admin/edit/update-siswa{id}', [SiswaController::class, 'update'])->name('admin/edit/update-siswa{id}');
