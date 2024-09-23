@@ -38,3 +38,6 @@ Route::get('admin/edit/edit-jurusan/{id}', [JurusanController::class, 'edit'])->
 // routing edit update
 Route::put('admin/edit/update-jurusan/{id}', [JurusanController::class, 'update'])->name('admin/edit/update-jurusan/{id}');
 Route::put('admin/edit/update-siswa{id}', [SiswaController::class, 'update'])->name('admin/edit/update-siswa{id}');
+
+// routing show
+Route::get('admin/showdetail/detail-siswa{id}', [SiswaController::class, 'show'])->name('admin/showdetail/detailsiswa{id}');

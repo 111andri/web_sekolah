@@ -61,15 +61,20 @@
             <div class="mb-3">
                 <label for="">Tahun lulus</label>
                 <select class="form-select" name="tahun_lulus_id" id="" name="tahun_lulus">
-                    <option value="{{ $tahunLuluss->id }}"
+
+                    {{-- <option value="{{ $tahunluluss->id }}"
                         {{ $siswa->tahun_lulus == $tahunLuluss->id ? 'selected' : '' }}>
-                        {{ $tahunLuluss->des_tahun_lulus }}</option>
+                        {{ $tahunLuluss->des_tahun_lulus }}</option> --}}
                     @foreach ($tahunLulus as $index => $dthnlulus)
                         @if ($index++ >= 1)
                             <option value="{{ $dthnlulus->id }}"
-                                {{ $siswa->tahun_lulus == $dthnlulus->id ? 'selected' : '' }}>
+                                {{ $siswa->tahun_lulus_id == $dthnlulus->id ? 'selected' : '' }}>
                                 {{ $dthnlulus->tahun_lulus }}
                             </option>
+                        @elseif ($index++)
+                            <option value="{{ $dthnlulus->id }}"
+                                {{ $siswa->tahun_lulus_id == $dthnlulus->id ? 'selected' : '' }}>
+                                {{ $dthnlulus->des_tahun_lulus }}
                         @endif
                     @endforeach
                 </select>

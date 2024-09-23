@@ -90,6 +90,14 @@ class SiswaController extends Controller
      */
     public function show(string $id)
     {
+        $siswa = Siswa::findOrFail($id);
+        $jurusan = Jurusan::all();
+        $angkatan = Angkatan::all();
+        $agama = Agama::all();
+        $tahunLulus = TahunLulus::all();
+        $jenisKelamin = JenisKelamin::all();
+        
+        return view('admin/showdetail/detail-siswa', compact('siswa', 'jurusan', 'angkatan', 'agama', 'tahunLulus', 'jenisKelamin'));
     }
 
     /**

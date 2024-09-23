@@ -51,17 +51,21 @@
                                     height="40px">
                             </td>
                             <td>
+                                <a href="{{ url('admin/showdetail/detail-siswa' . $siswa->id) }}">Show</a>
                                 <a href="{{ url('admin/edit/edit-siswa' . $siswa->id) }}"><button
-                                        class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i>Edit</button></a>
+                                class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button></a>
                                 {{-- <a href="{{ url('admin/siswa' . $siswa->id) }}" ><button class="btn btn-sm btn-danger" id="deleteForm"><i
                                             class="bi bi-trash"></i>
                                         Delete</button></a> --}}
 
-                                <form action="{{ url('admin/siswa'.$siswa->id) }}" method="post" class="d-inline" onsubmit="return confirm('yakin ingin menghapus data')">
+                                <form action="{{ url('admin/siswa' . $siswa->id) }}" method="post" class="d-inline"
+                                    onsubmit="return confirm('yakin ingin menghapus data')">
                                     @method('delete')
                                     @csrf
-                                    <button class="btn btn-danger">Delete</button>
+                                    {{-- <button class="btn btn-danger">Delete</button> --}}
+                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                 </form>
+
                             </td>
                         </tr>
                     @endforeach
@@ -71,6 +75,7 @@
         </div>
 
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -97,6 +102,6 @@
         </script>
     @endif
 
-   
+
 
 </x-layout>
