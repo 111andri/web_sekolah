@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jurusan', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_jurusan');
-            $table->timestamps();
+        Schema::table('siswa', function (Blueprint $table) {
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->after('no_hp')->nullable();
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jurusan');
+        Schema::table('siswa', function (Blueprint $table) {
+            $table->dropColumn(['jenis_kelamin']);
+        });
     }
 };
