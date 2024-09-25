@@ -48,41 +48,48 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'foto_siswa' => 'required |image|mimes:png,jpg,jpeg',
-                'nama_siswa' => 'required',
-                'alamat' => 'required',
-                'nisn' => 'required',
-            ],
-            [
-                'foto_siswa.required' => 'silahkan upload foto terlebih dahulu',
-                'nama_siswa.required' => 'nama tidak boleh kosong',
-                'alamat.required' => 'alamat tidak boleh kosong',
-                'nisn.required' => 'nisn wajib di isi',
-            ],
-        );
+        try {
+            //code...
 
-        $imageName = time() . '.' . $request->foto_siswa->extension();
-        $request->foto_siswa->move(storage_path('/image'), $imageName);
+            $request->validate(
+                [
+                    'foto_siswa' => 'required |image|mimes:png,jpg,jpeg',
+                    'nama_siswa' => 'required',
+                    'alamat' => 'required',
+                    'nisn' => 'required',
+                ],
+                [
+                    'foto_siswa.required' => 'silahkan upload foto terlebih dahulu',
+                    'nama_siswa.required' => 'nama tidak boleh kosong',
+                    'alamat.required' => 'alamat tidak boleh kosong',
+                    'nisn.required' => 'nisn wajib di isi',
+                ],
+            );
 
-        // return back();
+            $imageName = time() . '.' . $request->foto_siswa->extension();
 
-        Siswa::create([
-            'jurusan_id' => $request->input('jurusan'),
-            'angkatan_id' => $request->input('angkatan'),
-            'jenis_kelamin_id' => $request->input('jenis_kelamin'),
-            'agama_id' => $request->input('agama'),
-            'tahun_lulus_id' => $request->input('tahun_lulus'),
-            'nama_siswa' => $request->input('nama_siswa'),
-            'nisn' => $request->input('nisn'),
-            'alamat' => $request->input('alamat'),
-            'tgl_lahir' => $request->input('tgl_lahir'),
-            'no_hp' => $request->input('no_hp'),
-            'foto_siswa' => $imageName,
-        ]);
+            $request->foto_siswa->move('storage/image/', $imageName); // perbaikan di sini
 
-        return redirect('admin/siswa')->with('success', 'data berhasil di tambahkan');
+            // return back();
+
+            Siswa::create([
+                'jurusan_id' => $request->input('jurusan'),
+                'angkatan_id' => $request->input('angkatan'),
+                'jenis_kelamin_id' => $request->input('jenis_kelamin'),
+                'agama_id' => $request->input('agama'),
+                'tahun_lulus_id' => $request->input('tahun_lulus'),
+                'nama_siswa' => $request->input('nama_siswa'),
+                'nisn' => $request->input('nisn'),
+                'alamat' => $request->input('alamat'),
+                'tgl_lahir' => $request->input('tgl_lahir'),
+                'no_hp' => $request->input('no_hp'),
+                'foto_siswa' => $imageName,
+            ]);
+
+            return redirect('admin/siswa')->with('success', 'data berhasil di tambahkan');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     /**
@@ -96,7 +103,7 @@ class SiswaController extends Controller
         $agama = Agama::all();
         $tahunLulus = TahunLulus::all();
         $jenisKelamin = JenisKelamin::all();
-        
+
         return view('admin/showdetail/detail-siswa', compact('siswa', 'jurusan', 'angkatan', 'agama', 'tahunLulus', 'jenisKelamin'));
     }
 

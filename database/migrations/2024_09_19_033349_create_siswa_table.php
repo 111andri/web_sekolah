@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('jurusan_id');
             $table->unsignedBigInteger('angkatan_id');
-            $table->unsignedBigInteger('jenis_kelamin_id');
-            $table->unsignedBigInteger('agama_id');
             $table->unsignedBigInteger('tahun_lulus_id');
             $table->string('nama_siswa');
             $table->string('nisn');
@@ -28,8 +26,6 @@ return new class extends Migration
 
             $table->foreign('jurusan_id')->references('id')->on('jurusan')->onDelete('cascade');
             $table->foreign('angkatan_id')->references('id')->on('angkatan')->onDelete('cascade');
-            $table->foreign('jenis_kelamin_id')->references('id')->on('jenis_kelamin')->onDelete('cascade');
-            $table->foreign('agama_id')->references('id')->on('agama')->onDelete('cascade');
             $table->foreign('tahun_lulus_id')->references('id')->on('tahun_lulus')->onDelete('cascade');
         });
     }

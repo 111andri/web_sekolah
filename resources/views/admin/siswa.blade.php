@@ -1,12 +1,14 @@
 <x-layout>
     <h2 class="mb-4">Tabel Data Jurusan</h2>
     <hr>
-    <div class="container-xxl mt-5 p-3 rounded-3" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <div class="container-xxl rounded-3 mt-5 p-3"
+        style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <!-- Tabel dengan field No, Nama Jurusan, dan Aksi -->
         <div class="table-responsive">
-            <table class="table table-hover active">
-                <button type="submit" class="btn btn-primary mb-2"><a href="{{ route('admin/tambah/tambah-siswa') }}"
-                        class="text-light">Tambah</a></button>
+            <table class="table-hover active table">
+                <button class="btn btn-primary mb-2" type="submit"><a
+                        class="text-light"
+                        href="{{ route('admin/tambah/tambah-siswa') }}">Tambah</a></button>
                 <thead class="table-dark text-center">
                     <tr>
                         <th>No</th>
@@ -47,23 +49,30 @@
                             </td>
                             <td> {{ $siswa->tgl_lahir }} </td>
                             <td>
-                                <img src="{{ asset('storage/image/1726925142.jpg') }}" alt="" width="40px"
+                                <img src="{{ asset('storage/image/' . $siswa->foto_siswa) }}"
+                                    alt="" width="40px"
                                     height="40px">
                             </td>
                             <td>
-                                <a href="{{ url('admin/showdetail/detail-siswa' . $siswa->id) }}">Show</a>
-                                <a href="{{ url('admin/edit/edit-siswa' . $siswa->id) }}"><button
-                                class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button></a>
+                                <a
+                                    href="{{ url('admin/showdetail/detail-siswa' . $siswa->id) }}">Show</a>
+                                <a
+                                    href="{{ url('admin/edit/edit-siswa' . $siswa->id) }}"><button
+                                        class="btn btn-sm btn-primary"><i
+                                            class="bi bi-pencil"></i></button></a>
                                 {{-- <a href="{{ url('admin/siswa' . $siswa->id) }}" ><button class="btn btn-sm btn-danger" id="deleteForm"><i
                                             class="bi bi-trash"></i>
                                         Delete</button></a> --}}
 
-                                <form action="{{ url('admin/siswa' . $siswa->id) }}" method="post" class="d-inline"
+                                <form class="d-inline"
+                                    action="{{ url('admin/siswa' . $siswa->id) }}"
+                                    method="post"
                                     onsubmit="return confirm('yakin ingin menghapus data')">
                                     @method('delete')
                                     @csrf
                                     {{-- <button class="btn btn-danger">Delete</button> --}}
-                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-danger"><i
+                                            class="bi bi-trash"></i></button>
                                 </form>
 
                             </td>
@@ -75,7 +84,6 @@
         </div>
 
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -101,7 +109,5 @@
             });
         </script>
     @endif
-
-
 
 </x-layout>
