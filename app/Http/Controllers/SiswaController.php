@@ -64,7 +64,7 @@ class SiswaController extends Controller
         );
 
         $imageName = time() . '.' . $request->foto_siswa->extension();
-        $request->foto_siswa->move(storage_path('/image'), $imageName);
+        $request->foto_siswa->move('storage/image/', $imageName); // perbaikan di sini
 
         // return back();
 
@@ -125,7 +125,7 @@ class SiswaController extends Controller
         if ($request->hasFile('foto_siswa')) {
             // upload image baru
             $imageName = time() . '.' . $request->foto_siswa->extension();
-            $request->foto_siswa->move(storage_path('/image'), $imageName);
+            $request->foto_siswa->move('storage/image/', $imageName); // perbaikan di sini
 
             // hapus foto lama
             Storage::delete('image/' . $siswa->foto_siswa);

@@ -47,11 +47,11 @@
                             </td>
                             <td> {{ $siswa->tgl_lahir }} </td>
                             <td>
-                                <img src="{{ asset('storage/image/1726925142.jpg') }}" alt="" width="40px"
+                                <img src="{{ asset('storage/image/' . $siswa->foto_siswa) }}" alt="" width="40px"
                                     height="40px">
                             </td>
                             <td>
-                                <a href="{{ url('admin/showdetail/detail-siswa' . $siswa->id) }}">Show</a>
+                                <a href="{{ url('admin/showdetail/detail-siswa' . $siswa->id) }}"><button class="btn btn-sm btn-success"><i class="bi bi-eye-fill"></i></button></a>
                                 <a href="{{ url('admin/edit/edit-siswa' . $siswa->id) }}"><button
                                 class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button></a>
                                 {{-- <a href="{{ url('admin/siswa' . $siswa->id) }}" ><button class="btn btn-sm btn-danger" id="deleteForm"><i
@@ -63,7 +63,7 @@
                                     @method('delete')
                                     @csrf
                                     {{-- <button class="btn btn-danger">Delete</button> --}}
-                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </form>
 
                             </td>

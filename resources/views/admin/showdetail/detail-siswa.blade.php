@@ -9,9 +9,9 @@
             <div class="card-body">
                 <div class="row ">
                     <div class="col ">
-                        <div class="mt-5"
-                            style="width: 50%; height: 200px; background-color:rgb(80, 179, 224); margin:auto">
-                            <p class="text-center">image</p>
+                        <div class="mt-5 ">
+                            <img src="{{ asset('storage/image/' . $siswa->foto_siswa) }}" alt="" height="400px"
+                                class="mx-auto d-block rounded-3">
                         </div>
                     </div>
                     <div class="col">
@@ -73,6 +73,7 @@
                     </div>
                 </div>
             </div>
+            <a href="{{ url('admin/siswa') }}" style="width: 8%" ><button class="btn btn-sm btn-primary p-1" style="width: 100%"><i class="bi bi-arrow-return-left"></i>Back</button></a>
         </div>
     </div>
 </x-layout>
